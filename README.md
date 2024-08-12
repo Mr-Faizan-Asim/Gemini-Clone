@@ -31,3 +31,15 @@ The **Gemini Clone Feature** is a component designed to replicate the functional
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/yourusername/gemini-clone.git
+   
+1. **Navigate to the project directory**:
+   ```bash
+   cd gemini-clone
+ 
+1. **Install dependencies**:
+   ```bash
+   npm install
+   
+1. **Start the devolpment server**:
+   ```bash
+   npm start
