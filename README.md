@@ -32,14 +32,20 @@ The **Gemini Clone Feature** is a component designed to replicate the functional
    ```bash
    git clone https://github.com/yourusername/gemini-clone.git
    
-1. **Navigate to the project directory**:
+2. **Navigate to the project directory**:
    ```bash
    cd gemini-clone
  
-1. **Install dependencies**:
+3. **Install dependencies**:
    ```bash
    npm install
    
-1. **Start the devolpment server**:
+4. **Start the devolpment server**:
    ```bash
    npm start
+
+### Usage
+
+- **Expand/Collapse Sidebar**: Click the menu icon to toggle the sidebar.
+- **Start New Chat**: Click the "New Chat" button to start a new chat session.
+- **Load Previous Prompts**: Click on recent prompts in the sidebar to load them.
