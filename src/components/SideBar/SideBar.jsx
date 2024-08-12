@@ -7,7 +7,6 @@ const SideBar = () => {
     const [extended, setExtended] = useState(false);
     const {onSent, prevPrompts, setRecentPrompt,newChat} = useContext(Context);
 
-
     const loadPrompt = async (prompt) => {
         setRecentPrompt(prompt);
         await onSent(prompt);
