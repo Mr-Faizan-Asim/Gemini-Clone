@@ -30,7 +30,7 @@ The **Gemini Clone Feature** is a component designed to replicate the functional
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/gemini-clone.git
+   git clone https://github.com/esairfan/Gemini-Clone.git
     
 ## Usage
 
