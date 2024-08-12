@@ -44,8 +44,29 @@ The **Gemini Clone Feature** is a component designed to replicate the functional
    ```bash
    npm start
 
-### Usage
+## Usage
 
 - **Expand/Collapse Sidebar**: Click the menu icon to toggle the sidebar.
 - **Start New Chat**: Click the "New Chat" button to start a new chat session.
 - **Load Previous Prompts**: Click on recent prompts in the sidebar to load them.
+
+## Customization
+
+- **Assets**: Update icons and images in the assets directory and adjust paths in `SideBar.js`.
+- **Styling**: Modify `SideBar.css` and `main.css` to change colors, fonts, and layout.
+- **Context**: Extend the Context in `SideBar.js` for additional state or functionality.
+
+## Responsive Design
+
+- **1000px Width**: Adjustments to avoid scrolling and ensure content fits without overflow.
+- **800px Width**: Further adjustments to optimize layout and fit content.
+- **600px Width and Below**: Sidebar is hidden to maximize the main content area on smaller screens.
+
+## License
+
+This project is licensed under the Apache License. See the LICENSE file for more details.
+
+## Contact
+
+- **Email**: [ibrahimirfan815@gmail.com](mailto:your.email@example.com)
+
