@@ -35,7 +35,6 @@ const ContextProvider = (props) => {
             setRecentPrompt(input);
             response = await run(input)
         }
-
         console.log(response);
 
         let formattedResponse = response;
