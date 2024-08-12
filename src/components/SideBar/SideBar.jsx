@@ -28,7 +28,6 @@ const SideBar = () => {
                             <p>{item.slice(0, 18)}...</p>
                         </div>)
                     })}
-
                 </div> : null}
 
             </div>
