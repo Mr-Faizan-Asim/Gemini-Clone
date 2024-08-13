@@ -263,7 +263,6 @@
 
     .main-container {
         padding: 0 20px;
-        width: 100%;
     }
 
     .main .greet {
@@ -304,7 +303,7 @@
     .search-box input {
         font-size: 17px;
         padding: 7px;
-        flex:0;
+        flex: 0;
     }
 
     .search-box img {
@@ -350,7 +349,6 @@
 
     .main-container {
         padding: 0 15px;
-        width:100%;
     }
 
     .main .greet {
@@ -391,6 +389,7 @@
     .search-box input {
         font-size: 16px;
         padding: 6px;
+        width: 60%;
     }
 
     .search-box img {
