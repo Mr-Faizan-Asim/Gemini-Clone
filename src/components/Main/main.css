@@ -304,6 +304,7 @@
     .search-box input {
         font-size: 17px;
         padding: 7px;
+        flex:0;
     }
 
     .search-box img {
@@ -340,7 +341,7 @@
 @media (max-width: 600px) {
     .main .nav { 
         font-size: 22px;
-        padding: 7px;
+        padding: 15px;
     }
 
     .main .nav img {
