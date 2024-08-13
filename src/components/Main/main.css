@@ -388,6 +388,7 @@
     .search-box input {
         font-size: 16px;
         padding: 6px;
+        width:60%;
     }
 
     .search-box img {
