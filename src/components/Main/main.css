@@ -379,7 +379,7 @@
 
     .main-bottom {
         padding: 0 15px;
-        width: 320px;
+        width: 300px;
     }
 
     .search-box {
@@ -396,6 +396,9 @@
     .search-box img {
         width: 20px;
     }
+    .main .bottom-info{
+    font-size: 10px; 
+}
 
     .result-title {
         margin: 30px 0;
