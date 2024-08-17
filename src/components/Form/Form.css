@@ -5,7 +5,7 @@
     border-radius: 15px;
     padding: 40px; /* Adjust padding as needed */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    max-width: 1000px;
+    max-width: 100%;
     width: 100%;
     box-sizing: border-box;
     /* Centering the container */
