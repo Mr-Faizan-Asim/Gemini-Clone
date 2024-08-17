@@ -1,0 +1,157 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+  }
+  
+  .landing-page {
+    text-align: center;
+    overflow-x: hidden;
+  }
+  
+  /* Header */
+  .header {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .header h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+  
+  .header p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+  }
+  
+  .cta-button {
+    background-color: #fff;
+    color: #ff7e5f;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1em;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #ff7e5f;
+    color: white;
+  }
+  
+  /* Services */
+  .services {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+  }
+  
+  .services h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+  }
+  
+  .service {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .service h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+  }
+  
+  .service p {
+    font-size: 1.1em;
+    color: #555;
+  }
+  
+  /* Team Section */
+  .team {
+    padding: 60px 20px;
+  }
+  
+  .team h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+  }
+  
+  .team-member {
+    max-width: 300px;
+    margin: 20px auto;
+    text-align: center;
+  }
+  
+  .team-member img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    border: 5px solid #ff7e5f;
+  }
+  
+  .team-member h3 {
+    font-size: 1.5em;
+    margin-top: 15px;
+  }
+  
+  .team-member p {
+    font-size: 1.1em;
+    color: #777;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #f0f4f9;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9em;
+  }
+  
+  .footer p {
+    color: #555;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .header h1 {
+      font-size: 2.5em;
+    }
+  
+    .header p {
+      font-size: 1em;
+    }
+  
+    .cta-button {
+      font-size: 0.9em;
+      padding: 12px 24px;
+    }
+  
+    .services h2 {
+      font-size: 2em;
+    }
+  
+    .team-member {
+      max-width: 250px;
+    }
+  
+    .team-member h3 {
+      font-size: 1.3em;
+    }
+  
+    .team-member p {
+      font-size: 1em;
+    }
+  }
+  
