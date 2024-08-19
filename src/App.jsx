@@ -5,6 +5,7 @@ import Main from './components/Main/Main';
 import Form from './components/Form/form';
 import LandingPage from './components/Home/home';
 import './App.css';
+import Conv from './components/Conversation/conv';
 
 const App = () => {
   return (
@@ -14,6 +15,8 @@ const App = () => {
         {/* When the path is '/', render the SideBar component */}
         <Route path="/" element={<LandingPage/>} />
         <Route path="/infocollect" element={<Form />} />
+        
+        <Route path="/conversation" element={<Conv />} />
 
         {/* When the path is '/bot', render the Main component */}
         <Route path="/bot" element={<Main />} />

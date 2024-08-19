@@ -1,0 +1,428 @@
+.main {
+    flex: 1;
+    min-height: 100vh;
+    padding-bottom: 15vh;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.main .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 27px;
+    padding: 20px;
+    color: #585858;
+}
+
+.main .nav img {
+    width: 40px;
+    background-color: #bab8b8;
+    border-radius: 50%;
+}
+
+.main-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.main .greet {
+    font-size: 56px;
+    margin: 50px 0px;
+    color: #c4c7c5;
+    font-weight: 500;
+}
+
+.main span {
+    background: -webkit-linear-gradient(16deg, #4b90ff, #ff5546);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.main .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.main .card {
+    height: 200px;
+    padding: 15px;
+    background-color: #f0f4f9;
+    cursor: pointer;
+    position: relative;
+    border-radius: 10px;
+}
+
+.main .card img {
+    width: 35px;
+    padding: 5px;
+    position: absolute;
+    background-color: white;
+    border-radius: 20px;
+    bottom: 10px;
+    right: 10px;
+}
+.main .card p{
+    color: #585858;
+    font-size: 17px;
+}
+.main .card:hover{
+    background-color: #dfe4ea;
+}
+.main-bottom{
+    position: absolute;
+    bottom:0;
+    width: 100%;
+    max-width: 900px;
+    padding: 0px 20px;
+    margin: auto;
+}
+.search-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: #f0f4f9;
+    padding: 10px 20px; 
+    border-radius: 50px;
+}
+.search-box img{
+    width: 24px;
+}
+.search-box input{
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 18px ;
+}
+.search-box div{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.main .bottom-info{
+    font-size: 13px;
+    margin:10px auto;
+    text-align: center;
+    font-weight: 300;
+}
+.result{
+    padding: 0px 5%;
+    max-height: 70vh;
+    overflow: scroll;
+}
+.result::-webkit-scrollbar{
+    display: none;
+}
+.result-title{
+    margin: 40px 0px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.result img{
+  width: 40px;
+  border-radius: 50%;   
+}
+.result-title img{
+    
+    background-color: #bab8b8;
+}
+.result-data{
+    display: flex;
+    align-items: start;
+    gap: 20px;
+}
+.loader{
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+.hr{
+    border-radius: 4px;
+    border: none;
+    background-color: #087cef;
+    background: linear-gradient(to right, #9ed7ff, #ffffff, #93d7ff);
+    background-size: 800px 50px;
+    height: 20px;
+    animation: loader 3s infinite linear;
+}
+
+@keyframes loader {
+    0% {
+        background-position: -800px 0px;
+    }
+    100% {
+        background-position: 800px 0px;
+    }
+}
+.result-data p{
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.8;
+} 
+@media (max-width: 1000px) {
+    .main .nav {
+        font-size: 22px;  /* Slightly smaller font */
+        padding: 16px;    /* Reduced padding */
+    }
+
+    .main .nav img {
+        width: 36px;      /* Slightly smaller image size */
+    }
+
+    .main-container {
+        padding: 0 15px;  /* Reduced container padding */
+    }
+
+    .main .greet {
+        font-size: 46px;  /* Reduced font size */
+        margin: 40px 0;   /* Reduced margin */
+    }
+
+    .main .cards {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));  /* Smaller cards */
+        gap: 12px;         /* Reduced gap */
+        padding: 15px;     /* Reduced padding */
+    }
+
+    .main .card {
+        height: 180px;     /* Reduced card height */
+        padding: 10px;     /* Reduced padding */
+    }
+
+    .main .card img {
+        width: 32px;       /* Slightly smaller image size */
+        bottom: 8px;
+        right: 8px;
+    }
+
+    .main .card p {
+        font-size: 15px;   /* Slightly smaller font size */
+    }
+
+    .main-bottom {
+        padding: 0 15px;   /* Reduced padding */
+    }
+
+    .search-box {
+        gap: 15px;         /* Reduced gap */
+        padding: 8px 15px; /* Reduced padding */
+    }
+
+    .search-box input {
+        font-size: 16px;   /* Slightly smaller font size */
+        padding: 6px;      /* Reduced padding */
+    }
+
+    .search-box img {
+        width: 20px;       /* Slightly smaller image size */
+    }
+
+    .result-title {
+        margin: 32px 0;    /* Reduced margin */
+        gap: 15px;         /* Reduced gap */
+    }
+
+    .result-title img {
+        width: 35px;       /* Slightly smaller image size */
+    }
+
+    .result-data {
+        gap: 15px;         /* Reduced gap */
+    }
+
+    .result-data p {
+        font-size: 15px;   /* Slightly smaller font size */
+        line-height: 1.65; /* Adjusted line height */
+    }
+
+    .loader {
+        gap: 8px;          /* Reduced gap */
+    }
+
+    .hr {
+        height: 16px;      /* Reduced height */
+    }}
+
+@media (max-width: 800px) {
+    .main .nav {
+        font-size: 24px;
+        padding: 18px;
+    }
+
+    .main .nav img {
+        width: 38px;
+    }
+
+    .main-container {
+        padding: 0 20px;
+    }
+
+    .main .greet {
+        font-size: 48px;
+        margin: 45px 0;
+    }
+
+    .main .cards {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 12px;
+        padding: 18px;
+    }
+
+    .main .card {
+        height: 190px;
+        padding: 12px;
+    }
+
+    .main .card img {
+        width: 32px;
+        bottom: 9px;
+        right: 9px;
+    }
+
+    .main .card p {
+        font-size: 16px;
+    }
+
+    .main-bottom {
+        padding: 0 18px;
+        width: 350px; 
+    }
+
+    .search-box {
+        gap: 18px;
+        padding: 9px 18px;
+    }
+
+    .search-box input {
+        font-size: 17px;
+        padding: 7px;
+    }
+
+    .search-box img {
+        width: 22px;
+    }
+
+    .result-title {
+        margin: 35px 0;
+        gap: 18px;
+    }
+
+    .result-title img {
+        width: 30px;
+    }
+
+    .result-data {
+        gap: 18px;
+    }
+
+    .result-data p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .loader {
+        gap: 9px;
+    }
+
+    .hr {
+        height: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .main .nav { 
+        font-size: 22px;
+        padding: 15px;
+    }
+
+    .main .nav img {
+        width: 35px;
+    }
+
+    .main-container {
+        padding: 0 15px;
+    }
+
+    .main .greet {
+        font-size: 28px;
+        margin: 40px 0;
+    }
+
+    .main .cards {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .main .card {
+        height: 120px;
+        padding: 8px;
+    }
+
+    .main .card img {
+        width: 10px;
+        bottom: 8px;
+        right: 8px;
+    }
+
+    .main .card p {
+        font-size: 12px;
+    }
+
+    .main-bottom {
+        padding: 0 15px;
+        width: 300px;
+    }
+
+    .search-box {
+        gap: 15px;
+        padding: 8px 15px;
+    }
+
+    .search-box input {
+        font-size: 14px;
+        padding: 4px;
+        width:60%;
+    }
+
+    .search-box img {
+        width: 20px;
+    }
+    .main .bottom-info{
+    font-size: 10px; 
+}
+
+    .result-title {
+        margin: 30px 0;
+        gap: 15px;
+    }
+
+    .result-title img {
+        width: 35px;
+    }
+
+    .result-data {
+        gap: 15px;
+    }
+
+    .result-data p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .loader {
+        gap: 8px;
+    }
+
+    .hr {
+        height: 15px;
+    }
+}
