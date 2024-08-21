@@ -183,6 +183,43 @@
 
 @media screen and (max-width: 600px) {
     .sidebar {
-        display: none;
+        min-height: 50vh;
+        padding: 15px 5px;
+        background-color: #f0f4f9;
+    }
+
+    .sidebar img {
+        width: 14px;
+    }
+
+    .sidebar .new-chat {
+        margin-top: 35px;
+        gap: 12px;
+        padding: 7px 9px;
+        font-size: 11px;
+    }
+
+    .sidebar .recent {
+        max-height: 40vh;
+    }
+
+    .sidebar .recent-title {
+        margin-top: 22px;
+        margin-bottom: 14px;
+        font-size: 14px;
+    }
+
+    .sidebar .recent-entry {
+        padding: 6px;
+        padding-right: 28px; 
+        gap: 6px; 
+    }
+
+    .sidebar .bottom-item {
+        padding: 6px;
+    }
+
+    .sidebar .nav-button {
+        font-size: 11px;
     }
 }

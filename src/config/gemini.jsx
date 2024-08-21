@@ -51,7 +51,9 @@ function splitDocuments(documents, chunkSize) {
 
 // Function to analyze emotional tone
 function analyzeEmotion(prompt) {
-  if (/sad|unhappy|depressed|pain|hurt/.test(prompt.toLowerCase())) {
+  if (/hello|hi|hey/.test(prompt.toLowerCase())) {
+    return 'greeting';
+  } else if (/sad|unhappy|depressed|pain|hurt/.test(prompt.toLowerCase())) {
     return 'empathetic';
   } else if (/happy|joyful|excited|good/.test(prompt.toLowerCase())) {
     return 'positive';
@@ -89,12 +91,14 @@ function combineRetrievedDocs(retrievedDocs) {
 async function run(prompt) {
   try {
     const emotion = analyzeEmotion(prompt);
-    let emotionPrefix = '';
+    let responsePrefix = '';
 
-    if (emotion === 'empathetic') {
-      emotionPrefix = 'I understand you might be going through a tough time, and I’m here to help. ';
+    if (emotion === 'greeting') {
+      responsePrefix = 'Hello! How are you doing today? Is there anything specific on your mind?';
+    } else if (emotion === 'empathetic') {
+      responsePrefix = 'I understand you might be going through a tough time, and I’m here to help. ';
     } else if (emotion === 'positive') {
-      emotionPrefix = 'It’s wonderful to hear that you’re feeling good! Let’s celebrate that positivity. ';
+      responsePrefix = 'It’s wonderful to hear that you’re feeling good! Let’s celebrate that positivity. ';
     }
 
     const documents = await loadDocuments();
@@ -108,7 +112,7 @@ async function run(prompt) {
     });
 
     const result = await chatSession.sendMessage(
-      `${emotionPrefix}Context: ${context}\n\n${prompt}`
+      `${responsePrefix} Context: ${context}\n\n${prompt}`
     );
 
     console.log(result.response.text());
