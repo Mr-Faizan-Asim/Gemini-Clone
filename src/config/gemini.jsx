@@ -1,15 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
   GoogleGenerativeAI,
   HarmCategory,
   HarmBlockThreshold,
 } from '@google/generative-ai';
-import * as pdfjsLib from 'pdfjs-dist';
+import { db } from '../firebaseConfig';
+import { collection, getDocs } from 'firebase/firestore';
 
-// Set the worker source for pdfjs-dist
-pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://unpkg.com/pdfjs-dist@latest/es5/build/pdf.worker.min.js';
-
-// API key and Generative AI client setup
 const apiKey = 'AIzaSyDyTfBW0kE7rRPK9v2BFfOjXdvE6caXG2g';
 const genAI = new GoogleGenerativeAI(apiKey);
 
@@ -25,34 +22,17 @@ const generationConfig = {
   responseMimeType: 'text/plain',
 };
 
-// Function to load and split documents
+// Fetch documents from Firestore
 async function loadDocuments() {
-  const pdfUrl = '/Empathy.pdf'; // Specify the path to your PDF document
-
   try {
-    // Fetch the PDF document
-    const pdfBytes = await fetch(pdfUrl).then((res) => res.arrayBuffer());
-
-    // Load the PDF
-    const pdf = await pdfjsLib.getDocument({ data: pdfBytes }).promise;
-
-    // Extract text from the PDF
-    const numPages = pdf.numPages;
-    const textPromises = [];
-    for (let i = 1; i <= numPages; i++) {
-      textPromises.push(pdf.getPage(i).then((page) => page.getTextContent()));
-    }
-    const textContents = await Promise.all(textPromises);
-    const texts = textContents
-      .map((textContent) =>
-        textContent.items.map((item) => item.str).join(' ')
-      )
-      .join(' ');
-
-    // Create a document object
-    return [{ pageContent: texts }];
+    const querySnapshot = await getDocs(collection(db, 'documents'));
+    const documents = [];
+    querySnapshot.forEach((doc) => {
+      documents.push({ pageContent: doc.data().content });
+    });
+    return documents;
   } catch (error) {
-    console.error('Error loading or processing PDF:', error);
+    console.error('Error fetching documents from Firestore:', error);
     return [];
   }
 }
@@ -69,7 +49,16 @@ function splitDocuments(documents, chunkSize) {
   return chunks;
 }
 
-// Function to retrieve relevant documents based on the query
+// Function to analyze emotional tone
+function analyzeEmotion(prompt) {
+  if (/sad|unhappy|depressed|pain|hurt/.test(prompt.toLowerCase())) {
+    return 'empathetic';
+  } else if (/happy|joyful|excited|good/.test(prompt.toLowerCase())) {
+    return 'positive';
+  }
+  return 'neutral';
+}
+
 async function retrieveRelevantDocs(query, documents) {
   const embeddings = new GoogleGenerativeAIEmbeddings({
     model: 'models/embedding-001',
@@ -97,13 +86,20 @@ function combineRetrievedDocs(retrievedDocs) {
   return retrievedDocs.map((doc) => doc.pageContent).join('\n');
 }
 
-// Simplified run function
 async function run(prompt) {
   try {
+    const emotion = analyzeEmotion(prompt);
+    let emotionPrefix = '';
+
+    if (emotion === 'empathetic') {
+      emotionPrefix = 'I understand you might be going through a tough time, and I’m here to help. ';
+    } else if (emotion === 'positive') {
+      emotionPrefix = 'It’s wonderful to hear that you’re feeling good! Let’s celebrate that positivity. ';
+    }
+
     const documents = await loadDocuments();
     const splitDocs = splitDocuments(documents, 1000);
 
-    // Generate context from documents (if needed)
     const context = splitDocs.map((doc) => doc.pageContent).join('\n');
 
     const chatSession = model.startChat({
@@ -112,7 +108,7 @@ async function run(prompt) {
     });
 
     const result = await chatSession.sendMessage(
-      `Context: ${context}\n\n${prompt}`
+      `${emotionPrefix}Context: ${context}\n\n${prompt}`
     );
 
     console.log(result.response.text());
