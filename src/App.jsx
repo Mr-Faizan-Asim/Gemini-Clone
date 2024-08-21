@@ -6,6 +6,7 @@ import Form from './components/Form/form';
 import LandingPage from './components/Home/home';
 import './App.css';
 import Conv from './components/Conversation/conv';
+import EmotionsDetection from './components/EmotionDetection';
 
 const App = () => {
   return (
@@ -17,6 +18,8 @@ const App = () => {
         <Route path="/infocollect" element={<Form />} />
         
         <Route path="/conversation" element={<Conv />} />
+        
+        <Route path="/emdetect" element={<EmotionsDetection/>} />
 
         {/* When the path is '/bot', render the Main component */}
         <Route path="/bot" element={<Main />} />

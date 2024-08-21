@@ -38,6 +38,9 @@ const SideBar = () => {
                         <Link to="/conversation" className="nav-button">
                             Conversation
                         </Link>
+                        <Link to="/emdetect" className="nav-button">
+                            Emotion Detect
+                        </Link>
                     </div>
                 )}
 
